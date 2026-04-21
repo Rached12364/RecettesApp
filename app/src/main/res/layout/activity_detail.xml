@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gris_clair">
+
+    <ImageView
+        android:id="@+id/imgRecette"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:scaleType="centerCrop"/>
+
+    <!-- Barre de couleur décorative -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/or"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- Nom de la recette -->
+            <TextView
+                android:id="@+id/tvDetailNom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/vert_fonce"
+                android:fontFamily="sans-serif-medium"/>
+
+            <!-- Tag -->
+            <TextView
+                android:id="@+id/tvDetailTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/tag_background"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/vert_moyen"/>
+
+            <!-- Séparateur -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/or"/>
+
+            <!-- Section Ingrédients -->
+            <TextView
+                android:id="@+id/tvSectionIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="INGRÉDIENTS"
+                android:textSize="12sp"
+                android:letterSpacing="0.12"
+                android:textColor="@color/vert_clair"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <!-- Carte ingrédients -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/card_background"
+                android:padding="14dp">
+
+                <TextView
+                    android:id="@+id/tvIngredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/texte_principal"
+                    android:lineSpacingMultiplier="1.8"/>
+
+            </LinearLayout>
+
+            <!-- Section Étapes -->
+            <TextView
+                android:id="@+id/tvSectionEtapes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="ÉTAPES"
+                android:textSize="12sp"
+                android:letterSpacing="0.12"
+                android:textColor="@color/vert_clair"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <!-- Carte étapes -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/card_background"
+                android:padding="14dp">
+
+                <TextView
+                    android:id="@+id/tvEtapes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/texte_principal"
+                    android:lineSpacingMultiplier="1.8"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
