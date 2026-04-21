@@ -8,13 +8,12 @@
     <ImageView
         android:id="@+id/imgRecette"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="220dp"
         android:scaleType="centerCrop"/>
 
-    <!-- Barre de couleur décorative -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="4dp"
         android:background="@color/or"/>
 
     <ScrollView
@@ -25,58 +24,93 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="18dp">
+            android:padding="16dp">
 
-            <!-- Nom de la recette -->
             <TextView
                 android:id="@+id/tvDetailNom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/vert_fonce"
-                android:fontFamily="sans-serif-medium"/>
+                android:textColor="@color/vert_fonce"/>
 
-            <!-- Tag -->
             <TextView
                 android:id="@+id/tvDetailTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/tag_background"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:textSize="12sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:textSize="11sp"
                 android:textStyle="bold"
                 android:textColor="@color/vert_moyen"/>
 
-            <!-- Séparateur -->
-            <View
-                android:layout_width="40dp"
-                android:layout_height="3dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/or"/>
+            <!-- Infos rapides -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/card_background"
+                android:padding="14dp">
 
-            <!-- Section Ingrédients -->
+                <TextView
+                    android:id="@+id/tvDetailDuree"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:textColor="@color/texte_principal"/>
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gris_separateur"/>
+
+                <TextView
+                    android:id="@+id/tvDetailCalories"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:textColor="@color/texte_principal"/>
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gris_separateur"/>
+
+                <TextView
+                    android:id="@+id/tvDetailNote"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:textColor="@color/or"/>
+
+            </LinearLayout>
+
+            <!-- Ingrédients -->
             <TextView
-                android:id="@+id/tvSectionIngredients"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:text="INGRÉDIENTS"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:letterSpacing="0.12"
                 android:textColor="@color/vert_clair"
-                android:textAllCaps="true"
                 android:textStyle="bold"/>
 
-            <!-- Carte ingrédients -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/card_background"
                 android:padding="14dp">
 
@@ -90,24 +124,21 @@
 
             </LinearLayout>
 
-            <!-- Section Étapes -->
+            <!-- Étapes -->
             <TextView
-                android:id="@+id/tvSectionEtapes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="18dp"
                 android:text="ÉTAPES"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:letterSpacing="0.12"
                 android:textColor="@color/vert_clair"
-                android:textAllCaps="true"
                 android:textStyle="bold"/>
 
-            <!-- Carte étapes -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/card_background"
                 android:padding="14dp">
 

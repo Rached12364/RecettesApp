@@ -2,12 +2,11 @@
 <resources>
     <color name="vert_fonce">#1B4332</color>
     <color name="vert_moyen">#2D6A4F</color>
-    <color name="vert_clair">#40916C</color>
-    <color name="vert_pale">#D8F3DC</color>
-    <color name="or">#F4A261</color>
-    <color name="or_fonce">#E76F51</color>
-    <color name="blanc">#FAFAFA</color>
-    <color name="gris_clair">#F1F8F4</color>
-    <color name="texte_principal">#1B2B22</color>
-    <color name="texte_secondaire">#4A7A5A</color>
+    <color name="vert_clair">#52B788</color>
+    <color name="or">#D4A017</color>
+    <color name="gris_clair">#F4F4F4</color>
+    <color name="gris_separateur">#E0E0E0</color>
+    <color name="texte_principal">#212121</color>
+    <color name="texte_secondaire">#757575</color>
+    <color name="blanc">#FFFFFF</color>
 </resources>

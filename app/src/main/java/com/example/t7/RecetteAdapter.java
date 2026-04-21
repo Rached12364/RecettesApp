@@ -15,11 +15,16 @@ import java.util.List;
 public class RecetteAdapter extends RecyclerView.Adapter<RecetteAdapter.ViewHolder> {
 
     private final Context context;
-    private final List<Recette> recettes;
+    private List<Recette> recettes;
 
     public RecetteAdapter(Context context, List<Recette> recettes) {
         this.context = context;
         this.recettes = recettes;
+    }
+
+    public void mettreAJour(List<Recette> nouvelles) {
+        this.recettes = nouvelles;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -32,33 +37,47 @@ public class RecetteAdapter extends RecyclerView.Adapter<RecetteAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Recette recette = recettes.get(position);
-        holder.tvNom.setText(recette.getNom());
-        holder.tvDescription.setText(recette.getDescription());
-        holder.tvTag.setText(recette.getTag());
+        Recette r = recettes.get(position);
+
+        holder.tvNom.setText(r.getNom());
+        holder.tvDescription.setText(r.getDescription());
+        holder.tvTag.setText(r.getTag());
+        holder.tvDuree.setText(r.getDuree() + " min");
+        holder.tvCalories.setText(r.getCalories() + " kcal");
+        holder.tvNote.setText(getEtoiles(r.getNote()) + " " + r.getNote());
 
         Glide.with(context)
-                .load(recette.getImageUrl())
+                .load(r.getImageUrl())
                 .placeholder(R.drawable.ic_launcher_background)
                 .centerCrop()
                 .into(holder.imgRecette);
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailActivity.class);
-            intent.putExtra("nom",         recette.getNom());
-            intent.putExtra("tag",         recette.getTag());
-            intent.putExtra("ingredients", recette.getIngredients());
-            intent.putExtra("etapes",      recette.getEtapes());
-            intent.putExtra("imageUrl",    recette.getImageUrl());
+            intent.putExtra("nom",         r.getNom());
+            intent.putExtra("tag",         r.getTag());
+            intent.putExtra("ingredients", r.getIngredients());
+            intent.putExtra("etapes",      r.getEtapes());
+            intent.putExtra("imageUrl",    r.getImageUrl());
+            intent.putExtra("duree",       r.getDuree());
+            intent.putExtra("calories",    r.getCalories());
+            intent.putExtra("note",        r.getNote());
             context.startActivity(intent);
         });
+    }
+
+    private String getEtoiles(float note) {
+        int plein = (int) note;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 5; i++) sb.append(i < plein ? "★" : "☆");
+        return sb.toString();
     }
 
     @Override
     public int getItemCount() { return recettes.size(); }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvNom, tvDescription, tvTag;
+        TextView tvNom, tvDescription, tvTag, tvDuree, tvCalories, tvNote;
         ImageView imgRecette;
 
         ViewHolder(View itemView) {
@@ -66,6 +85,9 @@ public class RecetteAdapter extends RecyclerView.Adapter<RecetteAdapter.ViewHold
             tvNom         = itemView.findViewById(R.id.tvNom);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvTag         = itemView.findViewById(R.id.tvTag);
+            tvDuree       = itemView.findViewById(R.id.tvDuree);
+            tvCalories    = itemView.findViewById(R.id.tvCalories);
+            tvNote        = itemView.findViewById(R.id.tvNote);
             imgRecette    = itemView.findViewById(R.id.imgRecette);
         }
     }
